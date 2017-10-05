@@ -110,7 +110,7 @@ defmodule Spreedly.Environment do
   defp response({:ok, %HTTPoison.Response{status_code: code, body: body}}) when code in [401, 402, 404] do
     error_response(body)
   end
-  defp response({:ok, %HTTPoison.Response{status_code: code, body: body}}) when code in [200, 201] do
+  defp response({:ok, %HTTPoison.Response{status_code: code, body: body}}) when code in [200, 201, 202] do
     ok_response(body)
   end
   defp response({:ok, %HTTPoison.Response{status_code: code, body: body}}) when code in [422, 403] do
